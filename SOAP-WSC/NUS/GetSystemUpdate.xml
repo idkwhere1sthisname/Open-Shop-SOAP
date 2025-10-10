@@ -1,0 +1,60 @@
+<!-- REQUEST -->
+POST /nus/services/NetUpdateSOAP HTTP/1.1
+Host: nus.shop.wii.com
+User-Agent: wii libnup/1.0
+Connection: Keep-Alive
+Accept: application/xml
+Accept-Charset: UTF-8
+Content-type: text/xml; charset=utf-8
+SOAPAction: urn:nus.wsapi.broadon.com/GetSystemUpdate
+Content-Length: 937
+
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soapenv:Body>
+    <GetSystemUpdateRequest xmlns="urn:nus.wsapi.broadon.com">
+      <Version>1.0</Version>
+      <MessageId>*</MessageId>
+      <DeviceId>*</DeviceId>
+      <RegionId>*</RegionId>
+      <CountryCode>*</CountryCode>
+      <!-- TitleVersion appears for every title(?) -->
+      <TitleVersion>
+        <TitleId>*</TitleId>
+        <Version>*</Version>
+      </TitleVersion>
+      <Attribute>*</Attribute>
+      <AuditData />
+    </GetSystemUpdateRequest>
+  </soapenv:Body>
+</soapenv:Envelope>
+
+<!-- RESPONSE -->
+Date: Fri, 10 Oct 2025 15:51:43 GMT
+Server: Apache/2.4.62
+Keep-Alive: timeout=45, max=300
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/xml;charset=utf-8
+
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Body>
+        <GetSystemUpdateResponse xmlns="urn:nus.wsapi.broadon.com">
+            <Version>1.0</Version>
+            <DeviceId>*</DeviceId>
+            <MessageId>*</MessageId>
+            <TimeStamp>*</TimeStamp>
+            <ErrorCode>0</ErrorCode>
+            <ContentPrefixURL>http://nus.cdn.shop.wii.com/ccs/download</ContentPrefixURL>
+            <UncachedContentPrefixURL>http://ccs.shop.wii.com/ccs/download</UncachedContentPrefixURL>
+            <TitleVersion>
+                <TitleId>*</TitleId>
+                <Version>*</Version>
+                <FsSize>*</FsSize>
+            </TitleVersion>
+            <UploadAuditData>*</UploadAuditData>
+            <TitleHash>*</TitleHash>
+        </GetSystemUpdateResponse>
+    </soapenv:Body>
+</soapenv:Envelope>

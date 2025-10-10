@@ -1,0 +1,53 @@
+<!-- REQUEST -->
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+                   xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                   xmlns:ecs="urn:ecs.wsapi.broadon.com">
+<SOAP-ENV:Body>
+<ecs:AcceptGiftTitle xsi:type="ecs:AcceptGiftTitleRequestType">
+  <ecs:Version>2.0</ecs:Version>
+  <ecs:MessageId>ECSHOP-*-*</ecs:MessageId>
+  <ecs:DeviceId>*</ecs:DeviceId>
+  <ecs:DeviceToken>ST-*</ecs:DeviceToken>
+  <ecs:AccountId>*</ecs:AccountId>
+  <ecs:Region>*</ecs:Region>
+  <ecs:Country>*</ecs:Country>
+  <ecs:Language>*</ecs:Language>
+  <ecs:SerialNo>*</ecs:SerialNo>
+  <ecs:DeviceCert>*</ecs:DeviceCert>
+  <ecs:TitleId>*</ecs:TitleId>
+  <ecs:TransactionId>*</ecs:TransactionId>
+  <ecs:Accept>1</ecs:Accept> <!-- 0 for reject -->
+  <ecs:Reason>*</ecs:Reason>
+</ecs:AcceptGiftTitle>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+<!-- RESPONSE -->
+HTTP/1.1 200 OK
+Date: Fri, 10 Oct 2025 16:45:38 GMT
+Server: Apache/2.4.62
+Keep-Alive: timeout=15, max=300
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/xml;charset=utf-8
+<!-- TransactionId should be the RGIFTGAME one. -->
+<!-- TODO: Get full request, can't use vWii NAND. -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Body>
+        <AcceptGiftTitleResponse xmlns="urn:ecs.wsapi.broadon.com">
+            <Version>2.0</Version>
+            <DeviceId>*</DeviceId>
+            <MessageId>ECSHOP-*-*</MessageId>
+            <TimeStamp>*</TimeStamp>
+            <ErrorCode>903</ErrorCode>
+            <ErrorMessage>IAS - Invalid device token</ErrorMessage>
+            <ServiceStandbyMode>false</ServiceStandbyMode>
+            <TitleId>0001000148435350</TitleId>
+        </AcceptGiftTitleResponse>
+    </soapenv:Body>
+</soapenv:Envelope>

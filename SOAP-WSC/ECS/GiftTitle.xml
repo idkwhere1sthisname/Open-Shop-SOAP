@@ -1,0 +1,88 @@
+<!-- REQUEST -->
+POST /ecs/services/ECommerceSOAP HTTP/1.1
+Host: ecs.shop.wii.com
+User-Agent: RVL ECSHOP 4.8.0 Jul 27 2012 16:52:03
+Connection: Keep-Alive
+Accept: application/xml
+Accept-Charset: UTF-8
+Content-type: text/xml; charset=utf-8
+SOAPAction: urn:ecs.wsapi.broadon.com/GiftTitle
+Content-Length: 2090
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+                   xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                   xmlns:ecs="urn:ecs.wsapi.broadon.com">
+<SOAP-ENV:Body>
+<ecs:GiftTitle xsi:type="ecs:GiftTitleRequestType">
+  <ecs:Version>2.0</ecs:Version>
+  <ecs:MessageId>ECSHOP-*-*</ecs:MessageId>
+  <ecs:DeviceId>*</ecs:DeviceId>
+  <ecs:DeviceToken>ST-*</ecs:DeviceToken>
+  <ecs:AccountId>*</ecs:AccountId>
+  <ecs:Region>*</ecs:Region>
+  <ecs:Country>*</ecs:Country>
+  <ecs:Language>*</ecs:Language>
+  <ecs:SerialNo>*</ecs:SerialNo>
+  <ecs:ItemId>*</ecs:ItemId>
+  <ecs:Price>
+    <ecs:Amount>*<ecs:Amount>
+    <ecs:Currency>POINTS</ecs:Currency>
+  </ecs:Price>
+  <ecs:Payment>
+    <ecs:PaymentMethod>*</ecs:PaymentMethod>
+    <ecs:AccountPayment>
+      <ecs:AccountNumber>*</ecs:AccountNumber>
+      <ecs:DeviceToken>*</ecs:DeviceToken>
+    </ecs:AccountPayment>
+  </ecs:Payment>
+  <ecs:DeviceCert>*</ecs:DeviceCert>
+  <ecs:TitleId>*</ecs:TitleId>
+  <ecs:Limits>
+    <ecs:Limits>*</ecs:Limits>
+    <ecs:LimitKind>*</ecs:LimitKind>
+  </ecs:Limits>
+  <ecs:Identifier>*</ecs:Identifier>
+  <ecs:IdentifierKind>*</ecs:IdentifierKind>
+</ecs:GiftTitle>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+<!-- RESPONSE -->
+HTTP/1.1 200 OK
+Date: Fri, 10 Oct 2025 16:11:20 GMT
+Server: Apache/2.4.62
+Keep-Alive: timeout=15, max=300
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/xml;charset=utf-8
+
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Body>
+        <GiftTitleResponse xmlns="urn:ecs.wsapi.broadon.com">
+            <Version>2.0</Version>
+            <DeviceId>*</DeviceId>
+            <MessageId>ECSHOP-*-*</MessageId>
+            <TimeStamp>*</TimeStamp>
+            <ErrorCode>0</ErrorCode>
+            <ServiceStandbyMode>false</ServiceStandbyMode>
+            <Balance>
+                <Amount>*</Amount>
+                <Currency>POINTS</Currency>
+            </Balance>
+            <Transactions>
+                <TransactionId>*</TransactionId>
+                <Date>*</Date>
+                <Type>PGIFTGAME</Type>
+            </Transactions>
+            <Transactions>
+                <TransactionId>*</TransactionId>
+                <Date>*</Date>
+                <Type>*</Type>
+            </Transactions>
+        </GiftTitleResponse>
+    </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,80 @@
+<!-- REQUEST -->
+<!-- from: https://github.com/OpenShopChannel/Open-Shop-SOAP/pull/5/commits -->
+POST /ecs/services/ECommerceSOAP HTTP/1.1
+Host: ecs.shop.wii.com
+User-Agent: RVL ECSHOP 4.8.0 Jul 27 2012 16:52:03
+Connection: keep-alive
+Accept: application/xml
+Accept-Charset: UTF-8
+Content-type: text/xml; charset=utf-8
+SOAPAction: urn:ecs.wsapi.broadon.com/ListPurchaseHistory
+Content-Length: 999
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+                   xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                   xmlns:ecs="urn:ecs.wsapi.broadon.com">
+<SOAP-ENV:Body>
+<ecs:ListPurchaseHistory xsi:type="ecs:ListPurchaseHistoryRequestType">
+  <ecs:Version>2.0</ecs:Version>
+  <ecs:MessageId>ECSHOP-$DeviceId-$MessageId</ecs:MessageId>
+  <ecs:DeviceId>$DeviceId</ecs:DeviceId>
+  <ecs:DeviceToken>$DeviceToken</ecs:DeviceToken>
+  <ecs:AccountId>$AccountId</ecs:AccountId>
+  <ecs:Region>$Region</ecs:Region>
+  <ecs:Country>$Country</ecs:Country>
+  <ecs:Language>$Language</ecs:Language>
+  <ecs:SerialNo>$SerialNo</ecs:SerialNo>
+  <ecs:ApplicationId>$ApplicationId</ecs:ApplicationId>
+</ecs:ListPurchaseHistory>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+<!-- RESPONSE -->
+HTTP/1.1 200 OK
+Date: Thu, 16 Jan 2025 14:35:52 GMT
+Server: Apache/2.4.53
+Keep-Alive: timeout=15, max=300
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/xml;charset=utf-8
+
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Body>
+        <ListPurchaseHistoryResponse xmlns="urn:ecs.wsapi.broadon.com">
+            <Version>2.0</Version>
+            <DeviceId>$DeviceId</DeviceId>
+            <MessageId>ECSHOP-$DeviceId-$MessageId</MessageId>
+            <TimeStamp>$Timestamp</TimeStamp>
+            <ErrorCode>0</ErrorCode>
+            <ServiceStandbyMode>false</ServiceStandbyMode>
+            <!--
+              NOTE: <Transactions></Transactions> appears however many times something was purchased from the WSC
+              It is unsure if this includes PurchasePoints
+            -->
+            <Transactions>
+                <TransactionId>$TransactionId</TransactionId>
+                <Date>$Date</Date>
+                <Type>$Type</Type>
+                <TotalPaid>$TotalPaid</TotalPaid>
+                <Currency>$Currency</Currency>
+                <ItemId>$ItemId</ItemId>
+                <ItemPricing>
+                    <ItemId>$ItemId</ItemId>
+                    <Price>
+                        <Amount>$Amount</Amount>
+                        <Currency>$Currency</Currency>
+                    </Price>
+                    <LicenseKind>$LicenseKind</LicenseKind>
+                </ItemPricing>
+                <TitleId>$TitleId</TitleId>
+            </Transactions>
+            <ListResultTotalSize>$ListResultTotalSize</ListResultTotalSize>
+        </ListPurchaseHistoryResponse>
+    </soapenv:Body>
+</soapenv:Envelope>

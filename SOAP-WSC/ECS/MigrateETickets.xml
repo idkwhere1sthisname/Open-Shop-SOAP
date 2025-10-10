@@ -1,0 +1,43 @@
+<!-- REQUEST -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+                   xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                   xmlns:ecs="urn:ecs.wsapi.broadon.com">
+<SOAP-ENV:Body>
+<ecs:MigrateETickets xsi:type="ecs:MigrateETicketsRequestType">
+  <ecs:Version>2.0</ecs:Version>
+  <ecs:MessageId>ECSHOP-*-*</ecs:MessageId>
+  <ecs:DeviceId>*</ecs:DeviceId>
+  <ecs:DeviceToken>ST-*</ecs:DeviceToken>
+  <ecs:AccountId>*</ecs:AccountId>
+  <ecs:Region>*</ecs:Region>
+  <ecs:Country>*</ecs:Country>
+  <ecs:Language>*</ecs:Language>
+  <ecs:SerialNo>*</ecs:SerialNo>
+  <ecs:TargetDeviceId>*</ecs:TargetDeviceId>
+  <ecs:TargetAccountId>*</ecs:TargetAccountId>
+</ecs:MigrateETickets>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+<!-- RESPONSE -->
+<!-- TODO: Add headers and full response -->
+HTTP/1.1 200 OK
+
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Body>
+        <MigrateETicketsResponse xmlns="urn:ecs.wsapi.broadon.com">
+            <Version>2.0</Version>
+            <DeviceId>*</DeviceId>
+            <MessageId>ECSHOP-*-*</MessageId>
+            <TimeStamp>*</TimeStamp>
+            <ErrorCode>672</ErrorCode>
+            <ErrorMessage>Wrong account number: target account number</ErrorMessage>
+            <ServiceStandbyMode>false</ServiceStandbyMode>
+        </MigrateETicketsResponse>
+    </soapenv:Body>
+</soapenv:Envelope>

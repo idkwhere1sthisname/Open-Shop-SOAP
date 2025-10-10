@@ -1,0 +1,161 @@
+<!-- REQUEST -->
+POST /cas/services/CatalogingSOAP HTTP/1.1
+Host: cas.shop.wii.com
+User-Agent: RVL ECDK 4.0.0 Sep 21 2010 07:18:46
+Accept: application/xml
+Accept-Charset: UTF-8
+Content-type: text/xml; charset=utf-8
+SOAPAction: urn:cas.wsapi.broadon.com/ListContentSetsEx
+Content-Length: 2264
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+                   xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                   xmlns:cas="urn:cas.wsapi.broadon.com">
+<SOAP-ENV:Body>
+<cas:ListContentSetsEx xsi:type="cas:ListContentSetsExRequestType">
+  <cas:Version>2.0</cas:Version>
+  <cas:MessageId>ECDK-*-*</cas:MessageId>
+  <cas:DeviceId>*</cas:DeviceId>
+  <cas:DeviceToken>*</cas:DeviceToken>
+  <cas:AccountId>*</cas:AccountId>
+  <cas:ApplicationId>*</cas:ApplicationId>
+  <cas:TIN>*</cas:TIN>
+  <cas:Region>*</cas:Region>
+  <cas:Country>*</cas:Country>
+  <cas:Language>*</cas:Language>
+  <cas:ListResultOffset>0</cas:ListResultOffset>
+  <cas:ListResultLimit>100</cas:ListResultLimit>
+  <cas:Attributes>itemTitle</cas:Attributes>
+  <cas:Attributes>itemComment</cas:Attributes>
+  <cas:Attributes>itemComment2</cas:Attributes>
+  <cas:Attributes>itemComment3</cas:Attributes>
+  <cas:Attributes>itemComment4</cas:Attributes>
+  <cas:Attributes>itemComment5</cas:Attributes>
+  <cas:Attributes>itemComment6</cas:Attributes>
+  <cas:Attributes>itemVersion</cas:Attributes>
+  <cas:Attributes>itemReset</cas:Attributes>
+  <cas:Attributes>itemSet</cas:Attributes>
+  <cas:Attributes>itemSortKey</cas:Attributes>
+  <cas:Attributes>Prices</cas:Attributes>
+  <cas:Attributes>MinUserFileSize</cas:Attributes>
+  <cas:Attributes>MinUserInodes</cas:Attributes>
+  <cas:Attributes>MaxUserFileSize</cas:Attributes>
+  <cas:Attributes>MaxUserInodes</cas:Attributes>
+  <cas:Attributes>NewSince</cas:Attributes>
+  <cas:Attributes>etc, etc</cas:Attributes>
+  <cas:AttributeFiltersEx>
+    <cas:FilterType>==</cas:FilterType>
+    <cas:DataType>string</cas:DataType>
+    <cas:Name>PricingSelection</cas:Name>
+    <cas:Value>RELEASED</cas:Value>
+  </cas:AttributeFiltersEx>
+  <cas:TitleId>*</cas:TitleId>
+</cas:ListContentSetsEx>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+<!-- RESPONSE -->
+HTTP/1.1 200 OK
+Date: Fri, 10 Oct 2025 15:26:08 GMT
+Server: Apache/2.4.62
+Keep-Alive: timeout=15, max=300
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/xml;charset=UTF-8
+<!-- From JD 4 -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Body>
+        <ListContentSetsExResponse xmlns="urn:cas.wsapi.broadon.com">
+            <Version>2.0</Version>
+            <DeviceId>7567578</DeviceId>
+            <MessageId>ECDK-8658658</MessageId>
+            <TimeStamp>1760109968674</TimeStamp>
+            <ErrorCode>0</ErrorCode>
+            <ListResultTotalSize>43</ListResultTotalSize>
+            <Contents>
+                <TitleId>00010005734A4445</TitleId>
+                <Contents>
+                    <TitleIncluded>true</TitleIncluded>
+                    <ContentIndex>1</ContentIndex>
+                </Contents>
+                <Attributes>
+                    <Name>TitleVersion</Name>
+                    <Value>3</Value>
+                </Attributes>
+                <Attributes>
+                    <Name>NewSince</Name>
+                    <Value>1317945600000</Value>
+                </Attributes>
+                <Attributes>
+                    <Name>news</Name>
+                    <Value></Value>
+                </Attributes>
+                <Attributes>
+                    <Name>featured</Name>
+                    <Value></Value>
+                </Attributes>
+                <Attributes>
+                    <Name>thumbnail</Name>
+                    <Value>XXX</Value>
+                </Attributes>
+                <Attributes>
+                    <Name>soloduo</Name>
+                    <Value>solo</Value>
+                </Attributes>
+                <Attributes>
+                    <Name>artist</Name>
+                    <Value>Catalogue</Value>
+                </Attributes>
+                <Attributes>
+                    <Name>videopreview</Name>
+                    <Value>XXX</Value>
+                </Attributes>
+                <Attributes>
+                    <Name>longdesc</Name>
+                    <Value>XXX</Value>
+                </Attributes>
+                <Attributes>
+                    <Name>difficulty</Name>
+                    <Value>1</Value>
+                </Attributes>
+                <Attributes>
+                    <Name>duration</Name>
+                    <Value>0</Value>
+                </Attributes>
+                <Attributes>
+                    <Name>Target</Name>
+                    <Value>1</Value>
+                </Attributes>
+                <Attributes>
+                    <Name>name</Name>
+                    <Value>Catalogue</Value>
+                </Attributes>
+                <Attributes>
+                    <Name>rating PEGI</Name>
+                    <Value>3+</Value>
+                </Attributes>
+                <Attributes>
+                    <Name>sweat</Name>
+                    <Value>1</Value>
+                </Attributes>
+                <Attributes>
+                    <Name>category</Name>
+                    <Value>XXX</Value>
+                </Attributes>
+                <Attributes>
+                    <Name>BestBuy</Name>
+                    <Value>1</Value>
+                </Attributes>
+                <Attributes>
+                    <Name>popular</Name>
+                    <Value></Value>
+                </Attributes>
+            </Contents>
+        </ListContentSetsExResponse>
+    </soapenv:Body>
+</soapenv:Envelope>

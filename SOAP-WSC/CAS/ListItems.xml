@@ -1,0 +1,83 @@
+<!-- 
+ Very similar to ListContentSets, but for SERVICE titles
+-->
+<!-- REQUEST -->
+POST /cas/services/CatalogingSOAP HTTP/1.1
+Host: cas.shop.wii.com
+User-Agent: RVL ECDK 0.8.0 Mar  6 2008 19:16:13
+Connection: Keep-Alive
+Accept: application/xml
+Accept-Charset: UTF-8
+Content-type: text/xml; charset=utf-8
+SOAPAction: urn:cas.wsapi.broadon.com/ListItems
+Content-Length: 1252
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+                   xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                   xmlns:cas="urn:cas.wsapi.broadon.com">
+<SOAP-ENV:Body>
+<cas:ListItems xsi:type="cas:ListItemsRequestType">
+  <cas:Version>2.0</cas:Version>
+  <cas:MessageId>ECDK-*-*</cas:MessageId>
+  <cas:DeviceId>*</cas:DeviceId>
+  <cas:DeviceToken>WT-*</cas:DeviceToken>
+  <cas:AccountId>*</cas:AccountId>
+  <cas:ApplicationId>*</cas:ApplicationId>
+  <cas:TIN>*</cas:TIN>
+  <cas:Region>*</cas:Region>
+  <cas:Country>*</cas:Country>
+  <cas:Language>*</cas:Language>
+  <cas:ListResultOffset>0</cas:ListResultOffset>
+  <cas:ListResultLimit>0</cas:ListResultLimit>
+  <cas:Attributes>*</cas:Attributes>
+  <cas:AttributeFilters>
+    <cas:Name>TitleType</cas:Name>
+    <cas:Value>RVL_TKT</cas:Value>
+  </cas:AttributeFilters>
+  <cas:AttributeFilters>
+    <cas:Name>TitleKind</cas:Name>
+    <cas:Value>SERVICE</cas:Value>
+  </cas:AttributeFilters>
+</cas:ListItems>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+<!-- RESPONSE -->
+HTTP/1.1 200 OK
+Date: Fri, 10 Oct 2025 15:31:10 GMT
+Server: Apache/2.4.62
+Keep-Alive: timeout=15, max=300
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/xml;charset=UTF-8
+
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Body>
+        <ListItemsResponse xmlns="urn:cas.wsapi.broadon.com">
+            <Version>2.0</Version>
+            <DeviceId>*</DeviceId>
+            <MessageId>ECDK-*-*</MessageId>
+            <TimeStamp>*</TimeStamp>
+            <ErrorCode>0</ErrorCode>
+            <ListResultTotalSize>*</ListResultTotalSize>
+            <Contents>
+                <TitleId>*</TitleId>
+                <Contents>
+                    <TitleIncluded>true</TitleIncluded>
+                    <ContentIndex>1</ContentIndex>
+                </Contents>
+                <Attributes>
+                    <Name>*</Name>
+                    <Value>*</Value>
+                </Attributes>
+            </Contents>
+        </ListItemsResponse>
+    </soapenv:Body>
+</soapenv:Envelope>

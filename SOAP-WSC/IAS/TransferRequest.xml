@@ -39,4 +39,21 @@ Content-Length: 2165
 </SOAP-ENV:Envelope>
 
 <!-- RESPONSE -->
-<!-- TODO: Find response -->
+<!-- TODO: Find (correct) response and add headers -->
+HTTP/1.1 200 OK
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Body>
+        <TransferResponse xmlns="urn:ias.wsapi.broadon.com">
+            <Version>2.0</Version>
+            <DeviceId>4418947664</DeviceId>
+            <MessageId>ECSHOP-4418947664-49416337200830902</MessageId>
+            <TimeStamp>1760124204974</TimeStamp>
+            <ErrorCode>928</ErrorCode>
+            <ErrorMessage>IAS - Device cert does not verify.</ErrorMessage>
+            <ServiceStandbyMode>false</ServiceStandbyMode>
+        </TransferResponse>
+    </soapenv:Body>
+</soapenv:Envelope>

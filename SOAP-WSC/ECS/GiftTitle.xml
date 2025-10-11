@@ -81,7 +81,7 @@ Content-Type: text/xml;charset=utf-8
             <Transactions>
                 <TransactionId>*</TransactionId>
                 <Date>*</Date>
-                <Type>*</Type>
+                <Type>RGIFTGAME</Type>
             </Transactions>
         </GiftTitleResponse>
     </soapenv:Body>

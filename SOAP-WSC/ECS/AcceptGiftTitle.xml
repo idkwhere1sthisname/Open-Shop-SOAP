@@ -34,8 +34,9 @@ Connection: Keep-Alive
 Transfer-Encoding: chunked
 Content-Type: text/xml;charset=utf-8
 <!-- TransactionId should be the RGIFTGAME one. -->
-<!-- TODO: Get full request, can't use vWii NAND. -->
 
+<!-- REJECT/ACCEPT RESPONSE -->
+<!-- TODO: Verify if its the correct ACCEPT request -->
 <?xml version="1.0" encoding="UTF-8"?>
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <soapenv:Body>
@@ -44,10 +45,9 @@ Content-Type: text/xml;charset=utf-8
             <DeviceId>*</DeviceId>
             <MessageId>ECSHOP-*-*</MessageId>
             <TimeStamp>*</TimeStamp>
-            <ErrorCode>903</ErrorCode>
-            <ErrorMessage>IAS - Invalid device token</ErrorMessage>
+            <ErrorCode>0</ErrorCode>
             <ServiceStandbyMode>false</ServiceStandbyMode>
-            <TitleId>0001000148435350</TitleId>
+            <TitleId>*</TitleId>
         </AcceptGiftTitleResponse>
     </soapenv:Body>
 </soapenv:Envelope>

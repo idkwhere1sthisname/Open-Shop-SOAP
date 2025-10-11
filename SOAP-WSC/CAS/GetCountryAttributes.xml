@@ -1,0 +1,56 @@
+<!-- REQUEST -->
+POST /cas/services/CatalogingSOAP HTTP/1.1
+Host: cas.shop.wii.com
+User-Agent: RVL ECSHOP 4.8.0 Jul 27 2012 16:52:03
+Connection: Keep-Alive
+Accept: application/xml
+Accept-Charset: UTF-8
+Content-type: text/xml; charset=utf-8
+SOAPAction: urn:cas.wsapi.broadon.com/GetCountryAttributes
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+                   xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                   xmlns:cas="urn:cas.wsapi.broadon.com">
+<SOAP-ENV:Body>
+<cas:GetCountryAttributes xsi:type="cas:GetCountryAttributesRequestType">
+  <cas:Version>2.0</cas:Version>
+  <cas:MessageId>ECSHOP-*-*</cas:MessageId>
+  <cas:DeviceId>*</cas:DeviceId>
+  <cas:DeviceToken>ST-*</cas:DeviceToken>
+  <cas:AccountId>*</cas:AccountId>
+  <cas:Region>*</cas:Region>
+  <cas:Country>*</cas:Country>
+  <cas:Language>*</cas:Language>
+</cas:GetCountryAttributes>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+<!-- RESPONSE -->
+HTTP/1.1 200 OK
+Date: Sat, 11 Oct 2025 17:09:13 GMT
+Server: Apache/2.4.62
+Keep-Alive: timeout=15, max=296
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/xml;charset=utf-8
+<!-- EU/IT/en -->
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Body>
+        <GetCountryAttributesResponse xmlns="urn:cas.wsapi.broadon.com">
+            <Version>2.0</Version>
+            <DeviceId>*</DeviceId>
+            <MessageId>ECSHOP-*-*</MessageId>
+            <TimeStamp>*</TimeStamp>
+            <ErrorCode>0</ErrorCode>
+            <CountryAttribits>27</CountryAttribits>
+            <CountryAttributes>
+                <Name>AccountMaxPoints</Name>
+                <Value>10000</Value>
+            </CountryAttributes>
+        </GetCountryAttributesResponse>
+    </soapenv:Body>
+</soapenv:Envelope>

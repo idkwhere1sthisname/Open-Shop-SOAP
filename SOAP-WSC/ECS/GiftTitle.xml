@@ -86,3 +86,19 @@ Content-Type: text/xml;charset=utf-8
         </GiftTitleResponse>
     </soapenv:Body>
 </soapenv:Envelope>
+
+<!-- If gifting is disabled -->
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Body>
+        <GiftTitleResponse xmlns="urn:ecs.wsapi.broadon.com">
+            <Version>2.0</Version>
+            <DeviceId>*</DeviceId>
+            <MessageId>ECSHOP-*-*</MessageId>
+            <TimeStamp>*</TimeStamp>
+            <ErrorCode>647</ErrorCode>
+            <ErrorMessage>Gift is declined by the recipient</ErrorMessage>
+            <ServiceStandbyMode>false</ServiceStandbyMode>
+        </GiftTitleResponse>
+    </soapenv:Body>
+</soapenv:Envelope>

@@ -31,7 +31,7 @@
     </ecs:CreditCardPayment>
   </ecs:Payment>
   <ecs:PurchaseInfo>0</ecs:PurchaseInfo>
-  <ecs:Points>1000</ecs:Points>
+  <ecs:Points>5000</ecs:Points>
   <ecs:Quantity>1</ecs:Quantity>
 </ecs:PurchasePoints>
 </SOAP-ENV:Body>
@@ -39,7 +39,7 @@
 
 <!-- RESPONSE -->
 <!-- TODO: bypass PAS error and add headers -->
- 
+
 <?xml version="1.0" encoding="UTF-8"?>
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <soapenv:Body>

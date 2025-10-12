@@ -1,0 +1,40 @@
+<!-- REQUEST -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+                   xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                   xmlns:ias="urn:ias.wsapi.broadon.com">
+<SOAP-ENV:Body>
+<ias:GetAccountAttributes xsi:type="ias:GetAccountAttributesRequestType">
+  <ias:Version>2.0</ias:Version>
+  <ias:MessageId>ECSHOP-*-*</ias:MessageId>
+  <ias:DeviceId>*</ias:DeviceId>
+  <ias:DeviceToken>ST-*</ias:DeviceToken>
+  <ias:AccountId>*</ias:AccountId>
+  <ias:Region>*</ias:Region>
+  <ias:Country>*</ias:Country>
+  <ias:Language>*</ias:Language>
+  <ias:AttributeId>*</ias:AttributeId>
+</ias:GetAccountAttributes>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+<!-- RESPONSE -->
+Date: Sun, 12 Oct 2025 17:34:49 GMT
+
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Body>
+        <GetAccountAttributesResponse xmlns="urn:ias.wsapi.broadon.com">
+            <Version>2.0</Version>
+            <DeviceId>*</DeviceId>
+            <MessageId>ECSHOP-*-*</MessageId>
+            <TimeStamp>*</TimeStamp>
+            <ErrorCode>0</ErrorCode>
+            <ServiceStandbyMode>false</ServiceStandbyMode>
+            <AccountId>*</AccountId>
+        </GetAccountAttributesResponse>
+    </soapenv:Body>
+</soapenv:Envelope>

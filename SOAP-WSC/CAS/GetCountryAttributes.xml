@@ -28,6 +28,7 @@ SOAPAction: urn:cas.wsapi.broadon.com/GetCountryAttributes
 </cas:GetCountryAttributes>
 </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>
+
 <!-- RESPONSE -->
 HTTP/1.1 200 OK
 Date: Sat, 11 Oct 2025 17:09:13 GMT
@@ -36,6 +37,8 @@ Keep-Alive: timeout=15, max=296
 Connection: Keep-Alive
 Transfer-Encoding: chunked
 Content-Type: text/xml;charset=utf-8
+
+
 <!-- EU/IT/en -->
 <?xml version="1.0" encoding="UTF-8"?>
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">

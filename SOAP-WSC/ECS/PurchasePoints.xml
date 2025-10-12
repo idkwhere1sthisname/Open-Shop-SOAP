@@ -1,0 +1,62 @@
+<!-- REQUEST -->
+
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+                   xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                   xmlns:ecs="urn:ecs.wsapi.broadon.com">
+<SOAP-ENV:Body>
+<ecs:PurchasePoints xsi:type="ecs:PurchasePointsRequestType">
+  <ecs:Version>2.0</ecs:Version>
+  <ecs:MessageId>ECSHOP-*-*</ecs:MessageId>
+  <ecs:DeviceId>*</ecs:DeviceId>
+  <ecs:DeviceToken>ST-*</ecs:DeviceToken>
+  <ecs:AccountId>*</ecs:AccountId>
+  <ecs:Region>*</ecs:Region>
+  <ecs:Country>*</ecs:Country>
+  <ecs:Language>*</ecs:Language>
+  <ecs:SerialNo>*</ecs:SerialNo>
+  <ecs:ItemId>100132</ecs:ItemId> <!-- 50.00, EUR -->
+  <ecs:Price>
+    <ecs:Amount>50.00</ecs:Amount>
+    <ecs:Currency>EUR</ecs:Currency>
+  </ecs:Price>
+  <ecs:Taxes>0</ecs:Taxes>
+  <ecs:Payment>
+    <ecs:PaymentMethod>CCARD</ecs:PaymentMethod> <!-- CCARD, ECARD -->
+    <ecs:CreditCardPayment>
+      <ecs:CreditCardNumber>*</ecs:CreditCardNumber>
+      <ecs:IsEncrypted>*</ecs:IsEncrypted>
+      <!-- if encrypted, it should be true, otherwise leave outs -->
+    </ecs:CreditCardPayment>
+  </ecs:Payment>
+  <ecs:PurchaseInfo>0</ecs:PurchaseInfo>
+  <ecs:Points>1000</ecs:Points>
+  <ecs:Quantity>1</ecs:Quantity>
+</ecs:PurchasePoints>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+<!-- RESPONSE -->
+<!-- TODO: bypass PAS error and add headers -->
+ 
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Body>
+        <PurchasePointsResponse xmlns="urn:ecs.wsapi.broadon.com">
+            <Version>2.0</Version>
+            <DeviceId>*</DeviceId>
+            <MessageId>ECSHOP-*-*</MessageId>
+            <TimeStamp>*</TimeStamp>
+            <ErrorCode>899</ErrorCode>
+            <ErrorMessage>PAS - Internal Error: PAS - Internal ErrorPAS - Internal Error: got JAXBException while transforming xml String to obj</ErrorMessage>
+            <ServiceStandbyMode>false</ServiceStandbyMode>
+            <PurchaseInfo>0</PurchaseInfo>
+            <Transactions>
+                <TransactionId>*</TransactionId>
+                <Date>*</Date>
+                <Type>PURCHPTS</Type>
+            </Transactions>
+        </PurchasePointsResponse>
+    </soapenv:Body>
+</soapenv:Envelope>

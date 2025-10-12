@@ -1,0 +1,61 @@
+<!-- REQUEST -->
+POST /ecs/services/ECommerceSOAP HTTP/1.1
+Host: ecs.shop.wii.com
+User-Agent: RVL ECDK 0.8.0 Mar  6 2008 19:16:13
+Connection: Keep-Alive
+Accept: application/xml
+Accept-Charset: UTF-8
+Content-type: text/xml; charset=utf-8
+SOAPAction: urn:wsapi.ecs.broadon.com/GetETickets
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+                   xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                   xmlns:ecs="urn:ecs.wsapi.broadon.com">
+<SOAP-ENV:Body>
+<ecs:GetETickets xsi:type="ecs:GetETicketsRequestType">
+  <ecs:Version>2.0</ecs:Version>
+  <ecs:MessageId>ECSHOP-*-*</ecs:MessageId>
+  <ecs:DeviceId>*</ecs:DeviceId>
+  <ecs:DeviceToken>WT-*</ecs:DeviceToken>
+  <ecs:AccountId>*</ecs:AccountId>
+  <ecs:Region>*</ecs:Region>
+  <ecs:Country>*</ecs:Country>
+  <ecs:Language>*</ecs:Language>
+  <ecs:SerialNo>*</ecs:SerialNo>
+  <ecs:TitleIdTicketId>
+    <ecs:TitleId>*</ecs:TitleId>
+    <ecs:TicketId>*</ecs:TicketId>
+  </ecs:TitleIdTicketId>
+  <ecs:DeviceCert>*</ecs:DeviceCert>
+</ecs:GetETickets>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+<!-- RESPONSE -->
+HTTP/1.1 200 OK
+Date: Sun, 12 Oct 2025 09:57:24 GMT
+Server: Apache/2.2.19
+Keep-Alive: timeout=15, max=300
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/xml;charset=utf-8
+
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Body>
+        <GetETicketsResponse xmlns="urn:ecs.wsapi.broadon.com">
+            <Version>2.0</Version>
+            <DeviceId>*</DeviceId>
+            <MessageId>ECSHOP-*-*</MessageId>
+            <TimeStamp>*</TimeStamp>
+            <ErrorCode>0</ErrorCode>
+            <ServiceStandbyMode>false</ServiceStandbyMode>
+            <ETickets>*</ETickets>
+            <Certs>*</Certs>
+            <Certs>*</Certs>
+        </GetETicketsResponse>
+    </soapenv:Body>
+</soapenv:Envelope>

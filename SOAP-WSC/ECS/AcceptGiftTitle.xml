@@ -46,16 +46,16 @@ Content-Type: text/xml;charset=utf-8
 		<AcceptGiftTitleResponse
 			xmlns="urn:ecs.wsapi.broadon.com">
 			<Version>2.0</Version>
-			<DeviceId>4900400286</DeviceId>
-			<MessageId>ECSHOP-4900400286-49435200339226179</MessageId>
-			<TimeStamp>1760447356019</TimeStamp>
+			<DeviceId>*</DeviceId>
+			<MessageId>ECSHOP-*-*</MessageId>
+			<TimeStamp>*</TimeStamp>
 			<Balance>
-				<Amount></Amount>
+				<Amount>*</Amount>
 				<Currency>POINTS</Currency>
 			</Balance>
 			<ErrorCode>0</ErrorCode>
 			<ServiceStandbyMode>false</ServiceStandbyMode>
-			<SyncTime>1760447356020</SyncTime>
+			<SyncTime>*</SyncTime>
 			<ETickets>*</ETickets>
 			<Certs>*</Certs>
 			<Certs>*</Certs>
@@ -63,3 +63,4 @@ Content-Type: text/xml;charset=utf-8
 	</soapenv:Body>
 </soapenv:Envelope>
 0
+

@@ -35,19 +35,32 @@ Transfer-Encoding: chunked
 Content-Type: text/xml;charset=utf-8
 <!-- TransactionId should be the RGIFTGAME one. -->
 
-<!-- REJECT/ACCEPT RESPONSE -->
-<!-- TODO: Verify if its the correct ACCEPT request -->
-<?xml version="1.0" encoding="UTF-8"?>
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <soapenv:Body>
-        <AcceptGiftTitleResponse xmlns="urn:ecs.wsapi.broadon.com">
-            <Version>2.0</Version>
-            <DeviceId>*</DeviceId>
-            <MessageId>ECSHOP-*-*</MessageId>
-            <TimeStamp>*</TimeStamp>
-            <ErrorCode>0</ErrorCode>
-            <ServiceStandbyMode>false</ServiceStandbyMode>
-            <TitleId>*</TitleId>
-        </AcceptGiftTitleResponse>
-    </soapenv:Body>
+<!-- CORRECT ACCEPT RESPONSE -->
+<!-- <Transactions></Transactions> is optional (based on source code in Ghidra) -->
+<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope
+	xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<soapenv:Body>
+		<AcceptGiftTitleResponse
+			xmlns="urn:ecs.wsapi.broadon.com">
+			<Version>2.0</Version>
+			<DeviceId>*</DeviceId>
+			<MessageId>ECSHOP-*-*</MessageId>
+			<TimeStamp>*</TimeStamp>
+			<Balance>
+				<Amount>*</Amount>
+				<Currency>POINTS</Currency>
+			</Balance>
+			<ErrorCode>0</ErrorCode>
+			<ServiceStandbyMode>false</ServiceStandbyMode>
+			<SyncTime>*</SyncTime>
+			<ETickets>*</ETickets>
+			<Certs>*</Certs>
+			<Certs>*</Certs>
+		</AcceptGiftTitleResponse>
+	</soapenv:Body>
 </soapenv:Envelope>
+0
+

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+                   xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                   xmlns:cas="urn:cas.wsapi.broadon.com">
+<SOAP-ENV:Body>
+<cas:ListTitles xsi:type="cas:ListTitlesRequestType">
+  <cas:Version>2.0</cas:Version>
+  <cas:MessageId>$MessageId</cas:MessageId>
+  <cas:DeviceId>$DeviceId</cas:DeviceId>
+  <cas:DeviceToken>$DeviceTokenWeak</cas:DeviceToken>
+  <cas:AccountId>$AccountId</cas:AccountId>
+  <cas:ApplicationId>$ApplicationId</cas:ApplicationId>
+  <cas:TIN>$TIN</cas:TIN>
+  <cas:Region>$Region</cas:Region>
+  <cas:Country>$Country</cas:Country>
+  <cas:Language>%Language</cas:Language>
+  <cas:ListResultOffset>$ListResultOffset</cas:ListResultOffset>
+  <cas:ListResultLimit>$ListResultLimit</cas:ListResultLimit>
+  <cas:Attributes>Prices</cas:Attributes>
+  <cas:Attributes>Ratings</cas:Attributes>
+  <cas:Attributes>NewSince</cas:Attributes>
+  <cas:Attributes>attr1</cas:Attributes>
+  <cas:AttributeFilters>
+    <cas:Name>TitleType</cas:Name>
+    <cas:Value>$TitleType</cas:Value> <!-- RVL_TKT -->
+  </cas:AttributeFilters>
+  <cas:AttributeFilters>
+    <cas:Name>TitleKind</cas:Name>
+    <cas:Value>$TitleKind</cas:Value> <!-- SERVICE -->
+  </cas:AttributeFilters>
+</cas:ListTitles>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Body>
+        <ListTitlesResponse xmlns="urn:cas.wsapi.broadon.com">
+            <Version>2.0</Version>
+            <DeviceId>$DeviceId</DeviceId>
+            <MessageId>$MessageId</MessageId>
+            <TimeStamp>$TimeStamp</TimeStamp>
+            <ErrorCode>$ErrorCode</ErrorCode>
+            <ListResultTotalSize>$ListResultTotalSize</ListResultTotalSize>
+            <Titles>
+                <TitleId>$TitleId</TitleId>
+                <Attributes>
+                    <Name>NewSince</Name>
+                    <Value>$NewSince</Value>
+                </Attributes>
+                <Ratings>
+                    <Name>$RatingName</Name>
+                    <Rating>$Rating</Rating>
+                    <Age>$Age</Age>
+                </Ratings>
+              <Attributes>
+                <Name>attr1</Name>
+                <Value>attr1value</Value>
+              </Attributes>
+            </Titles>
+        </ListTitlesResponse>
+    </soapenv:Body>
+</soapenv:Envelope>

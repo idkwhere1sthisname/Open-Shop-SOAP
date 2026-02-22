@@ -12,7 +12,7 @@
   <cas:DeviceToken>$DeviceTokenWeak</cas:DeviceToken>
   <cas:AccountId></cas:AccountId>
   <cas:ApplicationId>$ApplicationId</cas:ApplicationId>
-  <cas:TIN>1095842763</cas:TIN>
+  <cas:TIN>$TIN</cas:TIN>
   <cas:Region>$Region</cas:Region>
   <cas:Country>$Country</cas:Country>
   <cas:Language>$Language</cas:Language>
@@ -72,3 +72,4 @@
           </ListItemsResponse>
     </soapenv:Body>
 </soapenv:Envelope>
+

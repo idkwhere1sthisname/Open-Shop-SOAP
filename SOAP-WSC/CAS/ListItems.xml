@@ -10,7 +10,7 @@
   <cas:MessageId>$MessageId</cas:MessageId>
   <cas:DeviceId>$DeviceId</cas:DeviceId>
   <cas:DeviceToken>$DeviceTokenWeak</cas:DeviceToken>
-  <cas:AccountId></cas:AccountId>
+  <cas:AccountId>$AccountId</cas:AccountId>
   <cas:ApplicationId>$ApplicationId</cas:ApplicationId>
   <cas:TIN>$TIN</cas:TIN>
   <cas:Region>$Region</cas:Region>
@@ -52,16 +52,16 @@
                 </Contents>
                 <Attributes>
                     <Name>MaxServiceDays</Name>
-                    <Value>--</Value>
+                    <Value>$MaxServiceDays</Value>
                 </Attributes>
                 <Attributes>
                     <Name>NewSince</Name>
-                    <Value>--</Value>
+                    <Value>$NewSince</Value>
                 </Attributes>
                 <Ratings>
-                    <Name>CERO</Name>
-                    <Rating>A</Rating>
-                    <Age>0</Age>
+                    <Name>$RatingName</Name>
+                    <Rating>$RatingValue</Rating>
+                    <Age>$RatingAge</Age>
                 </Ratings>
                 <Attributes>
                     <Name>attr1</Name>
@@ -72,4 +72,3 @@
           </ListItemsResponse>
     </soapenv:Body>
 </soapenv:Envelope>
-

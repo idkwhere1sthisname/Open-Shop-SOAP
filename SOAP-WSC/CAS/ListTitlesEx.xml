@@ -1,0 +1,59 @@
+<!-- REQUEST -->
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+                   xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                   xmlns:cas="urn:cas.wsapi.broadon.com">
+<SOAP-ENV:Body>
+<cas:ListTitlesEx xsi:type="cas:ListTitlesExRequestType">
+  <cas:Version>2.0</cas:Version>
+  <cas:MessageId>ECDK-*-*</cas:MessageId>
+  <cas:DeviceId>*</cas:DeviceId>
+  <cas:DeviceToken>WT-*</cas:DeviceToken>
+  <cas:AccountId>*</cas:AccountId>
+  <cas:ApplicationId>*</cas:ApplicationId>
+  <cas:TIN>*</cas:TIN>
+  <cas:Region>*</cas:Region>
+  <cas:Country>*</cas:Country>
+  <cas:Language>*</cas:Language>
+  <cas:ListResultOffset>*</cas:ListResultOffset>
+  <cas:ListResultLimit>*</cas:ListResultLimit>
+  <cas:Attributes>Version</cas:Attributes>
+  <cas:Attributes>etc</cas:Attributes>
+  <cas:AttributeFiltersEx>
+    <cas:DataType>string</cas:DataType>
+    <cas:FilterType>==</cas:FilterType>
+    <cas:Name>PricingSelection</cas:Name>
+    <cas:Value>RELEASED</cas:Value>
+  </cas:AttributeFiltersEx>
+  <cas:TitleId>*</cas:TitleId>
+</cas:ListTitlesEx>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+<!-- RESPONSE -->
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Body>
+        <ListTitlesExResponse xmlns="urn:cas.wsapi.broadon.com">
+            <Version>2.0</Version>
+            <DeviceId>*</DeviceId>
+            <MessageId>ECDK-*-*</MessageId>
+            <TimeStamp>*</TimeStamp>
+            <ErrorCode>0</ErrorCode>
+            <ListResultTotalSize>*</ListResultTotalSize>
+            <Titles>
+                <TitleId>*</TitleId>
+                <Attributes>
+                    <Name>*</Name>
+                    <Value>*</Value>
+                </Attributes>
+                <Attributes>
+                    <Name>etc</Name>
+                    <Value>etc</Value>
+                </Attributes>
+            </Titles>
+        </ListTitlesExResponse>
+    </soapenv:Body>
+</soapenv:Envelope>

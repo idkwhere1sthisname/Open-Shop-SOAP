@@ -72,9 +72,9 @@ Content-Type: text/xml;charset=UTF-8
     <soapenv:Body>
         <ListContentSetsExResponse xmlns="urn:cas.wsapi.broadon.com">
             <Version>2.0</Version>
-            <DeviceId>7567578</DeviceId>
-            <MessageId>ECDK-8658658</MessageId>
-            <TimeStamp>1760109968674</TimeStamp>
+            <DeviceId>*</DeviceId>
+            <MessageId>ECDK-*-*</MessageId>
+            <TimeStamp>*</TimeStamp>
             <ErrorCode>0</ErrorCode>
             <ListResultTotalSize>43</ListResultTotalSize>
             <Contents>

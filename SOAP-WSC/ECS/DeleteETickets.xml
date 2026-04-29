@@ -1,0 +1,48 @@
+<!-- REQUEST -->
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+                   xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                   xmlns:ecs="urn:ecs.wsapi.broadon.com">
+<SOAP-ENV:Body>
+<ecs:DeleteETickets xsi:type="ecs:DeleteETicketsRequestType">
+  <ecs:Version>2.0</ecs:Version>
+  <ecs:MessageId>ECSHOP-*-*</ecs:MessageId>
+  <ecs:DeviceId>*</ecs:DeviceId>
+  <ecs:DeviceToken>ST-*</ecs:DeviceToken>
+  <ecs:AccountId>*</ecs:AccountId>
+  <ecs:ApplicationId>*</ecs:ApplicationId>
+  <ecs:TIN>*</ecs:TIN>
+  <ecs:Region>*</ecs:Region>
+  <ecs:Country>*</ecs:Country>
+  <ecs:Language>*</ecs:Language>
+  <ecs:SerialNo>*</ecs:SerialNo>
+  <!-- Tickets appears however many times, with a valid TicketId -->
+  <ecs:Tickets>*</ecs:Tickets>
+  <ecs:Tickets>*</ecs:Tickets>
+</ecs:DeleteETickets>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+<!-- RESPONSE -->
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Body>
+        <DeleteETicketsResponse xmlns="urn:ecs.wsapi.broadon.com">
+            <Version>2.0</Version>
+            <DeviceId>*</DeviceId>
+            <MessageId>ECSHOP-*-*</MessageId>
+            <TimeStamp>*</TimeStamp>
+            <ErrorCode>0</ErrorCode>
+            <ServiceStandbyMode>false</ServiceStandbyMode>
+            <TicketsDeleted>*</TicketsDeleted> <!-- Count of how many times <ecs:Tickets> appears in the request (like ListResultTotalSize) -->
+            <!-- <Transactions> appears the same amount of times as the <ecs:Tickets> element in the request -->
+            <Transactions>
+                <TransactionId>*</TransactionId>
+                <Date>*</Date>
+                <Type>DELETEGAME</Type>
+            </Transactions>
+        </DeleteETicketsResponse>
+    </soapenv:Body>
+</soapenv:Envelope>

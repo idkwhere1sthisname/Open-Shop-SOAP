@@ -1,4 +1,5 @@
 <!-- REQUEST -->
+<!-- This is apparently used in Wii->Wii U Transfers simply to get the maximum amount of points an user can add -->
 POST /cas/services/CatalogingSOAP HTTP/1.1
 Host: cas.shop.wii.com
 User-Agent: RVL ECSHOP 4.8.0 Jul 27 2012 16:52:03
@@ -49,7 +50,7 @@ Content-Type: text/xml;charset=utf-8
             <MessageId>ECSHOP-*-*</MessageId>
             <TimeStamp>*</TimeStamp>
             <ErrorCode>0</ErrorCode>
-            <CountryAttribits>27</CountryAttribits>
+            <CountryAttribits>27</CountryAttribits> <!-- not like ListResultTotalSize, this looks like it's a bit, if it's not 27, the Wii U Transfer Tool will reject it -->
             <CountryAttributes>
                 <Name>AccountMaxPoints</Name>
                 <Value>10000</Value>

@@ -103,7 +103,7 @@ Content-Type: text/xml;charset=utf-8
                 <ItemCode>$ItemCode</ItemCode> <!-- ex. RVL-HCIJ0037 -->
                 <ReferenceId>$ReferenceId</ReferenceId> <!-- 16 bytes, 32 chars -->
                 <Limits>
-                    <Limits>$Limits</Limits> <!-- expiration TimeStamp (without milliseconds -->
+                    <Limits>$Limits</Limits> <!-- expiration TimeStamp (without milliseconds) -->
                     <LimitKind>DR</LimitKind>
                 </Limits>
             </Transactions>

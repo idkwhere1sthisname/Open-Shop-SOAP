@@ -28,6 +28,11 @@ Content-Length: 999
   <ecs:Language>$Language</ecs:Language>
   <ecs:SerialNo>$SerialNo</ecs:SerialNo>
   <ecs:ApplicationId>$ApplicationId</ecs:ApplicationId>
+  <!-- if a service title requests ListPurchaseHistory, it adds its TIN to the request -->
+  <!-- <ecs:TIN>$TIN</ecs:TIN> -->
+  <!-- It may also add <ecs:beginDate> and <ecs:endDate>  -->
+  <!-- <ecs:beginDate>$BeginDate</ecs:beginDate> // TimeStamp -->
+  <!-- <ecs:endDate>$EndDate</ecs:endDate> // TimeStamp -->
 </ecs:ListPurchaseHistory>
 </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>
@@ -73,6 +78,34 @@ Content-Type: text/xml;charset=utf-8
                     <LicenseKind>$LicenseKind</LicenseKind>
                 </ItemPricing>
                 <TitleId>$TitleId</TitleId>
+            </Transactions>
+            <!-- SERVICE title's expected <Transactions> -->
+            <Transactions>
+                <TransactionId>$TransactionId</TransactionId>
+                <Date>$Date</Date>
+                <Type>PURCHGAME</Type>
+                <TotalPaid>$TotalPaid</TotalPaid>
+                <Currency>POINTS</Currency>
+                <ItemId>$ItemId</ItemId>
+                <ItemPricing>
+                    <ItemId>$ItemId</ItemId>
+                    <Limits>
+                        <Limits>$Limits</Limits> <!-- if AT, limit is in seconds -->
+                        <LimitKind>AT</LimitKind>
+                    </Limits>
+                    <Price>
+                        <Amount>$Amount</Amount>
+                        <Currency>POINTS</Currency>
+                    </Price>
+                    <LicenseKind>SERVICE</LicenseKind>
+                </ItemPricing>
+                <TitleId>$TitleId</TitleId>
+                <ItemCode>$ItemCode</ItemCode> <!-- ex. RVL-HCIJ0037 -->
+                <ReferenceId>$ReferenceId</ReferenceId> <!-- 16 bytes, 32 chars -->
+                <Limits>
+                    <Limits>$Limits</Limits> <!-- expiration TimeStamp (without milliseconds -->
+                    <LimitKind>DR</LimitKind>
+                </Limits>
             </Transactions>
             <ListResultTotalSize>$ListResultTotalSize</ListResultTotalSize>
         </ListPurchaseHistoryResponse>

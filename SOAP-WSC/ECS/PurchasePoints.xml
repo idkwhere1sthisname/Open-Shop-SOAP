@@ -21,18 +21,33 @@
     <ecs:Amount>50.00</ecs:Amount>
     <ecs:Currency>EUR</ecs:Currency>
   </ecs:Price>
-  <ecs:Taxes>0</ecs:Taxes>
+  <ecs:Taxes>*</ecs:Taxes> <!-- -->
+  <ecs:Discount>*</ecs:Discount> <!-- ??? -->
   <ecs:Payment>
     <ecs:PaymentMethod>CCARD</ecs:PaymentMethod> <!-- CCARD, ECARD -->
     <ecs:CreditCardPayment>
-      <ecs:CreditCardNumber>*</ecs:CreditCardNumber>
+      <ecs:CreditCardNumber>*</ecs:CreditCardNumber> <!-- if not encrypted, the card is is 16 characters, else its the last 4 characters -->
       <ecs:IsEncrypted>*</ecs:IsEncrypted>
-      <!-- if encrypted, it should be true, otherwise leave outs -->
+      <!-- if encrypted, it should be true, otherwise leave out -->
     </ecs:CreditCardPayment>
+    <!-- if PaymentMethod is ECARD -->
+    <!--
+    <ecs:ECardPayment>
+      <ecs:ECardNumber>*</ecs:ECardNumber>
+      <ecs:ECardHash>*</ecs:ECardHash> // possibly a sha1 hash of ECardNumber
+      <ecs:ECardType>*</ecs:ECardType> // ???, integer apparently
+    -->
+    <!-- if PaymentMethod is ACCOUNT (it should never be, though) -->
+    <!--
+    <ecs:AccountPayment>
+      <ecs:AccountNumber>*</ecs:AccountNumber> // account id
+      <ecs:DeviceToken>*</ecs:DeviceToken>
+    </ecs:AccountPayment>
+    -->
   </ecs:Payment>
-  <ecs:PurchaseInfo>0</ecs:PurchaseInfo>
+  <ecs:PurchaseInfo>*</ecs:PurchaseInfo> <!-- ???, apparently looks for vcMessage and transId in another XML? -->
   <ecs:Points>5000</ecs:Points>
-  <ecs:Quantity>1</ecs:Quantity>
+  <ecs:Quantity>1</ecs:Quantity> <!-- always 1 -->
 </ecs:PurchasePoints>
 </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>

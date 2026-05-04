@@ -51,6 +51,11 @@ Content-Length: 2030
     <ecs:Limits>0</ecs:Limits>
     <ecs:LimitKind>$LimitKind</ecs:LimitKind>
   </ecs:Limits>
+  <!-- if a service title requests purchaseTitle, it adds ReferenceId and RivToken -->
+  <!--
+  <ecs:ReferenceId>$ReferenceId</ecs:ReferenceId>
+  <ecs:RivToken>$RivToken</ecs:RivToken>
+  -->
 </ecs:PurchaseTitle>
 </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>

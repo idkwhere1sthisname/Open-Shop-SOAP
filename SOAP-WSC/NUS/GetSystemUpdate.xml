@@ -50,8 +50,8 @@ Content-Type: text/xml;charset=utf-8
             <UncachedContentPrefixURL>http://ccs.shop.wii.com/ccs/download</UncachedContentPrefixURL>
             <TitleVersion>
                 <TitleId>*</TitleId>
-                <Version>*</Version>
-                <FsSize>*</FsSize>
+                <Version>*</Version> <!-- version reported in TMD -->
+                <FsSize>*</FsSize> <!-- size in bytes -->
             </TitleVersion>
             <UploadAuditData>*</UploadAuditData>
             <TitleHash>*</TitleHash>

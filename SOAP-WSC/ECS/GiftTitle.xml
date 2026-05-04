@@ -32,7 +32,7 @@ Content-Length: 2090
     <ecs:Currency>POINTS</ecs:Currency>
   </ecs:Price>
   <ecs:Payment>
-    <ecs:PaymentMethod>*</ecs:PaymentMethod>
+    <ecs:PaymentMethod>ACCOUNT</ecs:PaymentMethod>
     <ecs:AccountPayment>
       <ecs:AccountNumber>*</ecs:AccountNumber>
       <ecs:DeviceToken>*</ecs:DeviceToken>

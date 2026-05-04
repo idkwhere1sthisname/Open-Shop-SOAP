@@ -44,8 +44,8 @@ Content-Length: 2090
     <ecs:Limits>*</ecs:Limits>
     <ecs:LimitKind>*</ecs:LimitKind>
   </ecs:Limits>
-  <ecs:Identifier>*</ecs:Identifier>
-  <ecs:IdentifierKind>*</ecs:IdentifierKind>
+  <ecs:Identifier>*</ecs:Identifier> <!-- either account id or friend code -->
+  <ecs:IdentifierKind>*</ecs:IdentifierKind> <!-- ACCOUNT, DeviceCode -->
 </ecs:GiftTitle>
 </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>

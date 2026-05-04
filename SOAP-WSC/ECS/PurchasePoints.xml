@@ -26,7 +26,7 @@
   <ecs:Payment>
     <ecs:PaymentMethod>CCARD</ecs:PaymentMethod> <!-- CCARD, ECARD -->
     <ecs:CreditCardPayment>
-      <ecs:CreditCardNumber>*</ecs:CreditCardNumber> <!-- if not encrypted, the card is is 16 characters, else its the last 4 characters -->
+      <ecs:CreditCardNumber>*</ecs:CreditCardNumber> <!-- if not encrypted, the card is 16 characters, else its the last 4 characters -->
       <ecs:IsEncrypted>*</ecs:IsEncrypted>
       <!-- if encrypted, it should be true, otherwise leave out -->
     </ecs:CreditCardPayment>

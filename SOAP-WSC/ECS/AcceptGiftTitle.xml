@@ -55,13 +55,11 @@ Content-Type: text/xml;charset=utf-8
 			</Balance>
 			<ErrorCode>0</ErrorCode>
 			<ServiceStandbyMode>false</ServiceStandbyMode>
-    <!--
-    <Transactions>
-      <TransactionId>*</TransactionId>
-      <Date>*</Date>
-      <Type>RGIFTGAME</Type>
-    </Transactions>
-    -->
+            <!--<Transactions>
+              <TransactionId>*</TransactionId>
+              <Date>*</Date>
+              <Type>RGIFTGAME</Type>
+            </Transactions>-->
 			<SyncTime>*</SyncTime>
 			<ETickets>*</ETickets>
 			<Certs>*</Certs>

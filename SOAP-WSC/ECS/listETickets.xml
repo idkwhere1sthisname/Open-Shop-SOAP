@@ -63,7 +63,7 @@ a37
 			<Tickets></Tickets> exists to state that an account owns a WSC Channel Ticket.
 			The <Tickets> section is copied as many times as the amount of channels that the account owns.
 			If the account owns 5 channels, the <Tickets></Tickets> will be listed five times.
-			To convey a proper example, this SOAP Template states that this example account owns THREE  -->
+			To convey a proper example, this SOAP Template states that this example account owns FOUR  -->
 	<Tickets>
 		<TicketId>$TicketId</TicketId>
 		<TitleId>$TitleId</TitleId>
@@ -87,6 +87,16 @@ a37
 		<Version>0</Version>
 		<MigrateCount>0</MigrateCount>
 		<MigrateLimit>0</MigrateLimit>
+	</Tickets>
+	<!-- if a ticket is version 1 (tv1, service ticket) -->
+	<Tickets>
+		<TicketId>$TicketId</TicketId>
+		<TitleId>$TitleId</TitleId>
+		<RevokeDate>0</RevokeDate>
+		<Version>$Version</Version>
+		<MigrateCount>0</MigrateCount>
+		<MigrateLimit>0</MigrateLimit>
+		<FormatVersion>1</FormatVersion>
 	</Tickets>
 	<ForceSyncTime>0</ForceSyncTime>
 	<ExtTicketTime>0</ExtTicketTime>

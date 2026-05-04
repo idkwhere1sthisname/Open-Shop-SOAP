@@ -33,7 +33,7 @@ Keep-Alive: timeout=15, max=300
 Connection: Keep-Alive
 Transfer-Encoding: chunked
 Content-Type: text/xml;charset=utf-8
-<!-- TransactionId should be the RGIFTGAME one. -->
+<!-- Transaction Type should be the RGIFTGAME one. -->
 
 <!-- CORRECT ACCEPT RESPONSE -->
 <!-- <Transactions></Transactions> is optional (based on source code in Ghidra) -->
@@ -55,6 +55,13 @@ Content-Type: text/xml;charset=utf-8
 			</Balance>
 			<ErrorCode>0</ErrorCode>
 			<ServiceStandbyMode>false</ServiceStandbyMode>
+    <!--
+    <Transactions>
+      <TransactionId>*</TransactionId>
+      <Date>*</Date>
+      <Type>RGIFTGAME</Type>
+    </Transactions>
+    -->
 			<SyncTime>*</SyncTime>
 			<ETickets>*</ETickets>
 			<Certs>*</Certs>

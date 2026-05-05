@@ -39,7 +39,7 @@ HTTP/1.1 200 OK
             <TimeStamp>*</TimeStamp>
             <ErrorCode>0</ErrorCode>
             <ServiceStandbyMode>false</ServiceStandbyMode>
-           <!-- appears however many times <ecs:TitleIds> appears -->
+            <!-- appears however many times <ecs:TitleIds> appears -->
             <Transactions>
               <TransactionId>*</TransactionId>
               <Date>*</Date>

@@ -19,6 +19,7 @@
   <ecs:SerialNo>*</ecs:SerialNo>
   <ecs:TargetDeviceId>*</ecs:TargetDeviceId>
   <ecs:TargetAccountId>*</ecs:TargetAccountId>
+  <ecs:CheckOnly>false</ecs:CheckOnly> <!-- if true, doesn't return any error, even if something goes wrong server side -->
 </ecs:MigrateETickets>
 </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>

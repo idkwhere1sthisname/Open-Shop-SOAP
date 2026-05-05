@@ -21,12 +21,12 @@
   <ecs:TargetAccountId>*</ecs:TargetAccountId>
   <ecs:CheckOnly>false</ecs:CheckOnly> <!-- if true, doesn't return any error, even if something goes wrong server side -->
   <ecs:Mode>*</ecs:Mode> <!-- ??? -->
+  <ecs:TitleIds>*</ecs:TitleIds>
 </ecs:MigrateETickets>
 </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>
 
 <!-- RESPONSE -->
-<!-- Rebuilt from Wii U Transfer Tool DOL -->
 HTTP/1.1 200 OK
 
 <?xml version="1.0" encoding="UTF-8"?>
@@ -39,6 +39,12 @@ HTTP/1.1 200 OK
             <TimeStamp>*</TimeStamp>
             <ErrorCode>0</ErrorCode>
             <ServiceStandbyMode>false</ServiceStandbyMode>
+           <!-- appears however many times <ecs:TitleIds> appears -->
+            <Transactions>
+              <TransactionId>*</TransactionId>
+              <Date>*</Date>
+              <Type>XOUTTICKET</Type>
+            </Transactions>
         </MigrateETicketsResponse>
     </soapenv:Body>
 </soapenv:Envelope>

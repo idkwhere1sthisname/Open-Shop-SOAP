@@ -41,6 +41,7 @@ Connection: Keep-Alive
 Transfer-Encoding: chunked
 Content-Type: text/xml;charset=utf-8
 
+<!-- if the source console doesn't have any points -->
 <?xml version="1.0" encoding="UTF-8"?>
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <soapenv:Body>
@@ -51,7 +52,30 @@ Content-Type: text/xml;charset=utf-8
             <TimeStamp>*</TimeStamp>
             <ErrorCode>0</ErrorCode>
             <ServiceStandbyMode>false</ServiceStandbyMode>
-            <Transactions xsi:nil="true"/> <!-- has to be filled -->
+            <Transactions xsi:nil="true"/> 
+        </MigratePointsResponse>
+    </soapenv:Body>
+</soapenv:Envelope>
+
+<!-- if there are points to transfer -->
+<!-- reconstructed from Wii U Transfer Tool DOL -->
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Body>
+        <MigratePointsResponse xmlns="urn:ecs.wsapi.broadon.com">
+            <Version>2.0</Version>
+            <DeviceId>*</DeviceId>
+            <MessageId>ECSHOP-*-*</MessageId>
+            <TimeStamp>*</TimeStamp>
+            <ErrorCode>0</ErrorCode>
+            <ServiceStandbyMode>false</ServiceStandbyMode>
+            <PurchaseInfo>
+              <Transactions>
+                <TransactionId>*</TransactionId>
+                <Amount>*</Amount>
+                <Currency>POINTS</Currency>
+              </Transactions>
+            </PurchaseInfo>
         </MigratePointsResponse>
     </soapenv:Body>
 </soapenv:Envelope>

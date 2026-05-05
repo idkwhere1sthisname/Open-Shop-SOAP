@@ -24,7 +24,7 @@
 </SOAP-ENV:Envelope>
 
 <!-- RESPONSE -->
-<!-- TODO: Add headers and full response -->
+<!-- Rebuilt from Wii U Transfer Tool DOL -->
 HTTP/1.1 200 OK
 
 <?xml version="1.0" encoding="UTF-8"?>
@@ -35,8 +35,7 @@ HTTP/1.1 200 OK
             <DeviceId>*</DeviceId>
             <MessageId>ECSHOP-*-*</MessageId>
             <TimeStamp>*</TimeStamp>
-            <ErrorCode>672</ErrorCode>
-            <ErrorMessage>Wrong account number: target account number</ErrorMessage>
+            <ErrorCode>0</ErrorCode>
             <ServiceStandbyMode>false</ServiceStandbyMode>
         </MigrateETicketsResponse>
     </soapenv:Body>

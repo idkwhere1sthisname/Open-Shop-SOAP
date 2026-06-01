@@ -60,7 +60,7 @@ Content-Type: text/xml;charset=utf-8
             <ServiceStandbyMode>false</ServiceStandbyMode>
             <!--
               NOTE: <Transactions></Transactions> appears however many times something was purchased from the WSC
-              It is unsure if this includes PurchasePoints
+              Does not include PurchasePoints, region changes, does however, include redeemed codes (with currency GUNIT)
             -->
             <Transactions>
                 <TransactionId>$TransactionId</TransactionId>
@@ -104,7 +104,7 @@ Content-Type: text/xml;charset=utf-8
                 <ReferenceId>$ReferenceId</ReferenceId> <!-- 16 bytes, 32 chars -->
                 <Limits>
                     <Limits>$Limits</Limits> <!-- expiration TimeStamp (without milliseconds) -->
-                    <LimitKind>DR</LimitKind>
+                    <LimitKind>DR</LimitKind> <!-- time since epoch LimitKind -->
                 </Limits>
             </Transactions>
             <ListResultTotalSize>$ListResultTotalSize</ListResultTotalSize>

@@ -67,6 +67,17 @@
                     <Name>attr1</Name>
                     <Value>attr1value</Value>
                 </Attributes>
+                <Prices>
+                    <ItemId>*</ItemId>
+                    <Price>
+                       <Amount>*</Amount>
+                       <Currency>*</Currency> <!-- on the Wii/DSi, it's always POINTS (GUNIT for redeemable codes), on newer consoles, it's an actual currency -->
+                    </Price>
+                    <Limits>
+                      <Limits>*</Limits> <!-- if it's AT, limits are in seconds -->
+                      <LimitKind>*</LimitKind> <!-- AT, in some cases PR -->
+                    </Limits>
+                    <LicenseKind>SERVICE</LicenseKind>
             </Items>
           <!-- ... -->
           </ListItemsResponse>

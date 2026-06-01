@@ -155,6 +155,18 @@ Content-Type: text/xml;charset=UTF-8
                     <Name>popular</Name>
                     <Value></Value>
                 </Attributes>
+             <Prices>
+              <ItemId>*</ItemId>
+              <Price>
+                <Amount>*</Amount>
+                <Currency>POINTS</Currency>
+              </Price>
+              <Limits>
+                <Limits>0</Limits>
+                <LimitKind>PR</LimitKind>
+              </Limits>
+              <LicenseKind>PERMANENT</LicenseKind>
+            </Prices>
             </Contents>
         </ListContentSetsExResponse>
     </soapenv:Body>

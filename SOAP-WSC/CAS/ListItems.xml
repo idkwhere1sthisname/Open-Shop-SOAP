@@ -78,6 +78,7 @@
                       <LimitKind>*</LimitKind> <!-- AT, in some cases PR -->
                     </Limits>
                     <LicenseKind>SERVICE</LicenseKind>
+               </Prices>
             </Items>
           <!-- ... -->
           </ListItemsResponse>

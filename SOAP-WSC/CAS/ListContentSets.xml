@@ -109,8 +109,6 @@ Content-Type: text/xml;charset=utf-8
 <LicenseKind>PERMANENT</LicenseKind>
 </Prices>
 </Contents>
-<Contents>
-<TitleId>*</TitleId>
 </ListContentSetsResponse>
 </soapenv:Body>
 </soapenv:Envelope>

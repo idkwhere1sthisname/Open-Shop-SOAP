@@ -7,15 +7,15 @@
 <SOAP-ENV:Body>
 <cas:ListTitles xsi:type="cas:ListTitlesRequestType">
   <cas:Version>2.0</cas:Version>
-  <cas:MessageId>$MessageId</cas:MessageId>
+  <cas:MessageId>ECDK-$DeviceId-$MessageId</cas:MessageId>
   <cas:DeviceId>$DeviceId</cas:DeviceId>
-  <cas:DeviceToken>$DeviceTokenWeak</cas:DeviceToken>
+  <cas:DeviceToken>WT-$DeviceToken</cas:DeviceToken>
   <cas:AccountId>$AccountId</cas:AccountId>
   <cas:ApplicationId>$ApplicationId</cas:ApplicationId>
   <cas:TIN>$TIN</cas:TIN>
   <cas:Region>$Region</cas:Region>
   <cas:Country>$Country</cas:Country>
-  <cas:Language>%Language</cas:Language>
+  <cas:Language>$Language</cas:Language>
   <cas:ListResultOffset>$ListResultOffset</cas:ListResultOffset>
   <cas:ListResultLimit>$ListResultLimit</cas:ListResultLimit>
   <cas:Attributes>Prices</cas:Attributes>
@@ -23,12 +23,8 @@
   <cas:Attributes>NewSince</cas:Attributes>
   <cas:Attributes>attr1</cas:Attributes>
   <cas:AttributeFilters>
-    <cas:Name>TitleType</cas:Name>
-    <cas:Value>$TitleType</cas:Value> <!-- RVL_TKT -->
-  </cas:AttributeFilters>
-  <cas:AttributeFilters>
-    <cas:Name>TitleKind</cas:Name>
-    <cas:Value>$TitleKind</cas:Value> <!-- SERVICE -->
+    <cas:Name>PricingSelection</cas:Name>
+    <cas:Value>RELEASED</cas:Value>
   </cas:AttributeFilters>
 </cas:ListTitles>
 </SOAP-ENV:Body>
@@ -43,7 +39,7 @@
             <MessageId>$MessageId</MessageId>
             <TimeStamp>$TimeStamp</TimeStamp>
             <ErrorCode>$ErrorCode</ErrorCode>
-            <ListResultTotalSize>$ListResultTotalSize</ListResultTotalSize>
+             <ListResultTotalSize>$ListResultTotalSize</ListResultTotalSize>
             <Titles>
                 <TitleId>$TitleId</TitleId>
                 <Attributes>
@@ -59,6 +55,18 @@
                 <Name>attr1</Name>
                 <Value>attr1value</Value>
               </Attributes>
+<Prices>
+<ItemId>*</ItemId>
+<Price>
+<Amount>*</Amount>
+<Currency>POINTS</Currency>
+</Price>
+<Limits>
+<Limits>*</Limits>
+<LimitKind>*</LimitKind> <!-- usually PR, but can also be AT -->
+</Limits>
+<LicenseKind>*</LicenseKind> <!-- usually PERMANENT, but can also be SERVICE -->
+</Prices>
             </Titles>
         </ListTitlesResponse>
     </soapenv:Body>

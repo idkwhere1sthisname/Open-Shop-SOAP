@@ -1,4 +1,5 @@
 <!-- REQUEST -->
+<!-- this wasn't used on the Wii -->
 <?xml version="1.0" encoding="UTF-8"?>
 <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
                    xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
@@ -53,6 +54,18 @@
                     <Name>etc</Name>
                     <Value>etc</Value>
                 </Attributes>
+                <Prices>
+                  <ItemId>*</ItemId>
+                  <Price>
+                    <Amount>*</Amount>
+                    <Currency>POINTS</Currency>
+                  </Price>
+                  <Limits>
+                    <Limits>*</Limits>
+                    <LimitKind>*</LimitKind>
+                  </Limits>
+                  <LicenseKind>*</LicenseKind>
+                 </Prices>
             </Titles>
         </ListTitlesExResponse>
     </soapenv:Body>

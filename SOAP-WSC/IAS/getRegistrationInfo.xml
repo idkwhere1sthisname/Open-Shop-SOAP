@@ -66,6 +66,7 @@ Content-Type: text/xml;charset=utf-8
 	<DeviceTokenExpired>false</DeviceTokenExpired>
 	<Country>AU</Country>
 	<ExtAccountId></ExtAccountId>
+	<!-- if an user is registered to loyalty, it might add <ExtAccountPassword></ExtAccountPassword> -->
 	<DeviceCode>0000000000000000</DeviceCode>
 	<DeviceStatus>R</DeviceStatus>
 	<Currency>POINTS</Currency>

@@ -70,7 +70,7 @@ Content-Type: text/xml;charset=utf-8
             <ErrorCode>0</ErrorCode>
             <ServiceStandbyMode>false</ServiceStandbyMode>
             <Balance>
-                <Amount>*</Amount> <!-- balance AFTER the transfer -->
+                <Amount>*</Amount> <!-- source console's balance AFTER the transfer -->
                 <Currency>POINTS</Currency>
             </Balance>
             <Transactions>
